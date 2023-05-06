@@ -10,14 +10,18 @@ import { TaskClass } from '../../models/task.class';
  *  Components Imports
  */
 import { TaskTable } from '../pure/taskTable';
+import Taskform from '../pure/taskForm';
 
 
 /*  
  *  CSS / SCSS Imports
  */
 import '../../styles/task.css'
+
+/*  
+ *  Actions Imports
+ */
 import { ADD_TASK, REMOVE_SEL_TASK } from '../../store/actions/actions';
-import Taskform from '../pure/taskForm';
 
 /*  
  *  Context creation...
@@ -54,13 +58,11 @@ export const TasksProvider = () => {
      *  HOOK function for Lifecylcle control 
      */
     useEffect(() => {
-
         return () => {
             console.log('TaskList: Task State has been mounted/modified.');
             setTimeout(() => {
             }, 2000);
         };
-
     }, [tasksState]);
 
     /* 
